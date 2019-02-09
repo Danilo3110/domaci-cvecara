@@ -1,0 +1,220 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    background: whitesmoke;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    height: 200px;
+    padding: 1em;
+    text-align: center;
+    font-size: 50px;
+    text-transform: uppercase;
+    color: red;
+    background-image: url(Images/background.jpg);
+    background-position: center;
+    background-size: cover;
+    /*box-shadow: 0 0.5px 0 0 #ffffff inset, 0 1px 2px 0 #B3B3B3;*/
+}
+
+.column2, .column1 {
+    text-align: center;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+.column1 {
+    border: 1.5px dashed green;
+    width: 550px;
+    margin: 30px auto 15px auto;
+    padding: 15px 0 15px;
+    box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3);
+}
+
+table {
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1220px;
+    border: 2px solid green;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.12), 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+}
+
+.table2 {
+    margin-top: 30px;
+    width: 750px;
+}
+
+.ukCena {
+    border: 2px solid green;
+}
+
+table td {
+    border: 1px dotted green;
+}
+
+.column span, .column2 span {
+    position: relative;
+    display: inline-block;
+    margin: 11px 15px;
+}
+
+.textbox, .textbox2 {
+    display: inline-block;
+    width: 220px;
+    padding: 12px 0px 12px 12px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    font-size: 14px;
+    background: #efefef;
+    border-radius: 10px;
+    outline: 0;
+    text-indent: 120px;
+    transition: all 0.3s ease-in-out;
+    border: 2px dotted lightseagreen;
+}
+
+.textbox:hover, .textbox2:hover {
+    border-color: green;
+    transform: scale(1.04, 1.04);
+}
+
+.textbox::-webkit-input-placeholder {
+    color: #efefef;
+    text-indent: 0;
+    font-weight: 300;
+}
+
+.textbox+label, .textbox2+label {
+    display: inline-block;
+    position: absolute;
+    top: 8px;
+    left: 0;
+    bottom: 8px;
+    padding: 5px 15px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-shadow: 0 1px 0 rgba(19, 74, 70, 0);
+    transition: all 0.3s ease-in-out;
+    border-radius: 10px;
+    background: rgba(122, 184, 147, 0);
+}
+
+.textbox+label:after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    top: 100%;
+    left: 50%;
+    margin-left: -3px;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 3px solid rgba(122, 184, 147, 0);
+    transition: all 0.3s ease-in-out;
+}
+
+.textbox:focus, .textbox:active {
+    color: green;
+    text-indent: 0;
+    background: white;
+    border-color: green;
+    transform: scale(1.04, 1.04);
+}
+
+.textbox:focus::-webkit-input-placeholder, .textbox:active::-webkit-input-placeholder {
+    color: #aaa;
+}
+
+.textbox:focus+label, .balloon:active+label {
+    color: white;
+    text-shadow: 0 1px 0 rgba(19, 74, 70, 0.4);
+    background: lightseagreen;
+    transform: translateY(-40px);
+}
+
+.textbox:focus+label:after, .textbox:active+label:after {
+    border-top: 4px solid #10b19c;
+}
+
+.korpa, .korpa2 {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: green;
+    border: none;
+    color: antiquewhite;
+    text-transform: uppercase;
+    padding: 10px 10px;
+    margin: 20px 10px 20px;
+    text-align: center;
+    font-size: 18px;
+    width: 220px;
+    height: 50px;
+    line-height: 30px;
+    box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.24), 0 20px 55px 0 rgba(0, 0, 0, 0.19);
+    transition: 0.3s;
+    outline: none;
+    cursor: pointer;
+}
+
+.korpa:hover, .korpa2:hover {
+    background-color: rgba(0, 128, 0, 0.7);
+}
+
+.korpa:active, .korpa2:active {
+    background-color: lightseagreen;
+    transform: scale(0.92, 0.92);
+}
+
+.prikaz {
+    border: 1.5px dashed green;
+    margin: 50px auto 50px auto;
+    padding: 10px 0px 10px 0px;
+    width: 200px;
+    height: 170px;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.12), 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+}
+
+img {
+    background: transparent;
+    height: 100px;
+}
+
+img:hover {
+    transform: scale(1.025, 1.025);
+}
+
+.img2 {
+    padding: 0px 4px 0px;
+    height: 45px;
+}
+
+#cart {
+    height: 150px;
+    cursor: pointer;
+}
+
+.podaci {
+    font-size: 18px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-transform: uppercase;
+    color: lightseagreen;
+    text-align: center;
+    border-bottom: 1px solid green;
+    width: 400px;
+    margin: 5px auto 0px auto;
+    padding: 10px 0 10px 0;
+}

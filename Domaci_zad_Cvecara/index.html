@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="sr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Danilo L.">
+    <meta name="description" content="Cvecara">
+    <link rel="icon" type="image/png" sizes="32x32" href="Images/icons8-online-store-32.png">
+    <link rel="stylesheet" href="stil.css">
+    <title>Online Cvećara</title>
+</head>
+
+<body>
+    <form action="racun.html" method="GET" id="racun">
+        <div class="container">
+            <h1><img src="Images/flower-girl-161760_640.png" alt="cvece">&nbsp;Online&nbsp;Cvećara</h1>
+            <div class="column1">
+                <div>Podaci&nbsp;za&nbsp;plaćanje:</div>
+                <div class="column">
+                    <span>
+                        <input type="text" class="textbox" id="ime" name="Ime" required>
+                        <label for="ime">Ime</label>
+                    </span>
+                    <span>
+                        <input type="text" class="textbox" id="prezime" name="Prezime" required>
+                        <label for="prezime">Prezime</label>
+                    </span>
+                    <div>
+                        <input type="radio" class="radio" id="masterCard" name="creditCard" required>
+                        <label for="masterCard">MasterCard<img src="Images/mastercard_PNG26.png" alt="masterCard" class="img2"></label>
+                        <span>
+                            <input type="radio" class="radio" id="visaCard" name="creditCard" required>
+                            <label for="visaCard">VisaCard<img src="Images/visa_PNG32.png" alt="visaCard" class="img2"></label>
+                        </span>
+                    </div>
+                    <div>
+                        <input type="checkbox" class="box" id="dostava" name="Dostava">
+                        <label for="dostava">Dostava&nbsp;(dodatno&nbsp;se&nbsp;naplaćuje:&nbsp;350&nbsp;dinara)<br>
+                            <img src="Images/delivery-truck-icon_fa41090831.jpg" alt="dostava" class="img2"></label>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="column2">
+                <span>Sadržaj&nbsp;aranžmana:</span>
+                <span>
+                    <input type="text" class="textbox2" id="sum" disabled name="Ukupna cena">
+                    <label for="sum">Ukupna&nbsp;cena:</label>
+                </span>
+                <span>dinara</span>
+            </div><br>
+            <table>
+                <tbody>
+                    <tr>
+                        <td><img src="Images/buket-ruze-1.jpg" alt="ruze" title="Ruže"></td>
+                        <td class="column">
+                            <span>
+                                <input type="number" class="textbox" min="1" id="kol_1" name="Broj ruza" oninput="cvece(this)">
+                                <label for="kol_1">Količina:</label>
+                            </span>
+                        </td>
+                        <td class="column2">
+                            <span>
+                                <input type="text" class="textbox2" id="ukupna_cena_1" value="0" name="Ukupna cena ruza"
+                                    disabled>
+                                <label for="ukupna_cena_1">Ukupna&nbsp;cena:</label>
+                            </span>
+                        </td>
+                        <td class="column2">
+                            <span>
+                                <input type="text" class="textbox2" id="cena_1" value="180" disabled>
+                                <label for="cena_1">Po&nbsp;komadu:</label>
+                                <span>dinara</span>
+                            </span>
+                        </td>
+                        <td class="column2">
+                            <span>
+                                <input type="text" class="textbox2" id="stanje_1" value="100" disabled>
+                                <label for="stanje_1">Na&nbsp;stanju:</label>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="Images/ljiljani-cvetni-aranzmani.jpg" alt="ljiljan" title="Ljiljani"></td>
+                        <td class="column">
+                            <span>
+                                <input type="number" class="textbox" min="1" id="kol_2" name="Broj ljiljana" oninput="cvece(this)">
+                                <label for="kol_2">Količina:</label>
+                            </span>
+                        </td>
+                        <td class="column2">
+                            <span>
+                                <input type="text" class="textbox2" id="ukupna_cena_2" value="0" name="Ukupna cena ljiljana"
+                                    disabled>
+                                <label for="ukupna_cena_2">Ukupna&nbsp;cena:</label>
+                            </span>
+                        </td>
+                        <td class="column2">
+                            <span>
+                                <input type="text" class="textbox2" id="cena_2" value="250" disabled>
+                                <label for="cena_2">Po&nbsp;komadu:</label>
+                                <span>dinara</span>
+                            </span>
+                        </td>
+                        <td class="column2">
+                            <span>
+                                <input type="text" class="textbox2" id="stanje_2" value="100" disabled>
+                                <label for="stanje_2">Na&nbsp;stanju:</label>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="Images/buket-15-gerbera.jpg" alt="gerber" title="Gerberi"></td>
+                        <td class="column">
+                            <span>
+                                <input type="number" class="textbox" min="1" id="kol_3" name="Broj gerbera" oninput="cvece(this)">
+                                <label for="kol_3">Količina:</label>
+                            </span>
+                        </td>
+                        <td class="column2">
+                            <span>
+                                <input type="text" class="textbox2" id="ukupna_cena_3" value="0" name="Ukupna cena gerbera"
+                                    disabled>
+                                <label for="ukupna_cena_3">Ukupna&nbsp;cena:</label>
+                            </span>
+                        </td>
+                        <td class="column2">
+                            <span>
+                                <input type="text" class="textbox2" id="cena_3" value="305" disabled>
+                                <label for="cena_3">Po&nbsp;komadu:</label>
+                                <span>dinara</span>
+                            </span>
+                        </td>
+                        <td class="column2">
+                            <span>
+                                <input type="text" class="textbox2" id="stanje_3" value="100" disabled>
+                                <label for="stanje_3">Na&nbsp;stanju:</label>
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div>
+                <button type="button" class="korpa2">Poništi</button>
+                <button type="submit" class="korpa">Dodaj&nbsp;u&nbsp;korpu</button>
+            </div>
+        </div>
+    </form>
+    <div class="prikaz"><img src="Images/cart1.png" alt="korpa" id="cart" title="Kliknite za prikaz korpe"></div>
+
+    <script src="cvecara.js"></script>
+</body>
+
+</html>
