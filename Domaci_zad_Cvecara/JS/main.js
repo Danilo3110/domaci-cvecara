@@ -34,15 +34,13 @@ function cvece(obj) {
             obj.value = null;
         }
         ukCena_ruza.value = (obj.value * cena_ruza.value);
-    }
-    else if (obj == kol_ljiljan) {
+    } else if (obj == kol_ljiljan) {
         if (parseInt(obj.value) > parseInt(naStanju_ljiljan.value)) {
             alert("Nema dovoljno ljiljana na stanju.\nZa više, molimo dodjite kasnije.");
             obj.value = null;
         }
         ukCena_ljiljan.value = (obj.value * cena_ljiljan.value);
-    }
-    else {
+    } else {
         if (parseInt(obj.value) > parseInt(naStanju_gerber.value)) {
             alert("Nema dovoljno gerbera na stanju.\nZa više, molimo dodjite kasnije.");
             obj.value = null;
@@ -51,48 +49,6 @@ function cvece(obj) {
     }
     ukupnaCena.value = parseFloat(ukCena_ruza.value) + parseFloat(ukCena_ljiljan.value) + parseFloat(ukCena_gerber.value);
 };
-
-/*
-kol_ruza.addEventListener('input', function ruza() {
-    if (kol_ruza.value <= 0 || !Number.isInteger(+kol_ruza.value)) {
-        alert('Pogrešan unos! Unesite broj ruža.');
-        kol_ruza.value = null;
-    }
-    if (parseInt(kol_ruza.value) > parseInt(naStanju_ruza.value)) {
-        alert("Nema dovoljno ruža na stanju.\nZa više, molimo dodjite kasnije.");
-        kol_ruza.value = null;
-    }
-    ukCena_ruza.value = (kol_ruza.value * cena_ruza.value);
-    ukupnaCena.value = parseFloat(ukCena_ruza.value) + parseFloat(ukCena_ljiljan.value) + parseFloat(ukCena_gerber.value);
-});
-
-kol_ljiljan.addEventListener('input', function ljiljan() {
-    if (kol_ljiljan.value <= 0 || !Number.isInteger(+kol_ljiljan.value)) {
-        alert('Pogrešan unos! Unesite broj ljiljana.');
-        kol_ljiljan.value = null;
-    }
-    if (parseInt(kol_ljiljan.value) > parseInt(naStanju_ljiljan.value)) {
-        alert("Nema dovoljno ljiljana na stanju.\nZa više, molimo dodjite kasnije.");
-        kol_ljiljan.value = null;
-    }
-    ukCena_ljiljan.value = (kol_ljiljan.value * cena_ljiljan.value);
-    ukupnaCena.value = parseFloat(ukCena_ruza.value) + parseFloat(ukCena_ljiljan.value) + parseFloat(ukCena_gerber.value);
-});
-
-kol_gerber.addEventListener('input', function gerber() {
-    if (kol_gerber.value <= 0 || !Number.isInteger(+kol_gerber.value)) {
-        alert('Pogrešan unos! Unesite broj gerbera.');
-        kol_gerber.value = null;
-    }
-
-    if (parseInt(kol_gerber.value) > parseInt(naStanju_gerber.value)) {
-        alert("Nema dovoljno gerbera na stanju.\nZa više, molimo dodjite kasnije.");
-        kol_gerber.value = null;
-    }
-    ukCena_gerber.value = (kol_gerber.value * cena_gerber.value);
-    ukupnaCena.value = parseFloat(ukCena_ruza.value) + parseFloat(ukCena_ljiljan.value) + parseFloat(ukCena_gerber.value);
-});
-*/
 
 document.getElementsByClassName('korpa2')[0].addEventListener('click', function () {
     kol_ruza.value = '';
@@ -116,14 +72,12 @@ naruci.addEventListener('click', function dugme() {
     if (!(ukupnaCena.value == 0 || ukupnaCena.value == "")) {
         if ((ime.value == "" || prezime.value == "") || (card1.checked == false && card2.checked == false)) {
             alert('Morate uneti podatke za placanje!');
-        }
-        else {
+        } else {
             store();
             stanje();
             location.href = "racun.html";
         }
-    }
-    else {
+    } else {
         store();
         stanje();
         location.href = "racun.html";
@@ -133,8 +87,7 @@ naruci.addEventListener('click', function dugme() {
 function store() {
     if (sessionStorage.getItem('kol_ruza') == null) {
         sessionStorage.setItem('kol_ruza', kol_ruza.value);
-    }
-    else {
+    } else {
         if (kol_ruza.value == "") {
             kol_ruza.value = 0;
         }
@@ -147,8 +100,7 @@ function store() {
 
     if (sessionStorage.getItem('kol_ljiljan') == null) {
         sessionStorage.setItem('kol_ljiljan', kol_ljiljan.value);
-    }
-    else {
+    } else {
         if (kol_ljiljan.value == "") {
             kol_ljiljan.value = 0;
         }
@@ -161,8 +113,7 @@ function store() {
 
     if (sessionStorage.getItem('kol_gerber') == null) {
         sessionStorage.setItem('kol_gerber', kol_gerber.value);
-    }
-    else {
+    } else {
         if (kol_gerber.value == "") {
             kol_gerber.value = 0;
         }
@@ -175,32 +126,28 @@ function store() {
 
     if (sessionStorage.getItem('ukCena_ruza') == null) {
         sessionStorage.setItem('ukCena_ruza', ukCena_ruza.value);
-    }
-    else {
+    } else {
         var zbir3 = parseInt(ukCena_ruza.value) + parseInt(sessionStorage.getItem('ukCena_ruza'));
         sessionStorage.setItem('ukCena_ruza', zbir3);
     }
 
     if (sessionStorage.getItem('ukCena_ljiljan') == null) {
         sessionStorage.setItem('ukCena_ljiljan', ukCena_ljiljan.value);
-    }
-    else {
+    } else {
         var zbir4 = parseInt(ukCena_ljiljan.value) + parseInt(sessionStorage.getItem('ukCena_ljiljan'));
         sessionStorage.setItem('ukCena_ljiljan', zbir4);
     }
 
     if (sessionStorage.getItem('ukCena_gerber') == null) {
         sessionStorage.setItem('ukCena_gerber', ukCena_gerber.value);
-    }
-    else {
+    } else {
         var zbir5 = parseInt(ukCena_gerber.value) + parseInt(sessionStorage.getItem('ukCena_gerber'));
         sessionStorage.setItem('ukCena_gerber', zbir5);
     }
 
     if (sessionStorage.getItem('ukupnaCena') == null) {
         sessionStorage.setItem('ukupnaCena', ukupnaCena.value);
-    }
-    else {
+    } else {
         if (ukupnaCena.value == "") {
             ukupnaCena.value = 0;
         }
@@ -263,8 +210,7 @@ document.getElementById('cart').addEventListener('click', function () {
         if (confirm("- Vaša korpa je prazna!\n- Da li ipak želite da pogledate vašu korpu...?")) {
             location.href = "racun.html";
         }
-    }
-    else {
+    } else {
         location.href = "racun.html";
     }
 });
